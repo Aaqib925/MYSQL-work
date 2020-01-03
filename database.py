@@ -45,26 +45,43 @@
 
 # mydb.commit()   # this shit very important
 
+# import mysql.connector
+#
+# mydb = mysql.connector.connect(host="localhost", user="root", passwd="password", database="mydatabase")
+#
+# mycursor = mydb.cursor()
+#
+# sql = "INSERT INTO mydata (name, age) VALUES (%s, %s)"
+#
+# val = []
+#
+# for i in range(3):
+#     tup = ()
+#     tup_list = list(tup)
+#     x = input("Enter the name: ")
+#     y = input("Enter the age: ")
+#     tup_list.append(x)
+#     tup_list.append(y)
+#     tup = tuple(tup_list)
+#     val.append(tup)
+#
+# mycursor.executemany(sql, val)
+#
+# mydb.commit()
+
+# select querry
+
 import mysql.connector
 
 mydb = mysql.connector.connect(host="localhost", user="root", passwd="password", database="mydatabase")
 
 mycursor = mydb.cursor()
 
-sql = "INSERT INTO mydata (name, age) VALUES (%s, %s)"
+sql = "SELECT * from mydata"
 
-val = []
+mycursor.execute(sql)
 
-for i in range(3):
-    tup = ()
-    tup_list = list(tup)
-    x = input("Enter the name: ")
-    y = input("Enter the age: ")
-    tup_list.append(x)
-    tup_list.append(y)
-    tup = tuple(tup_list)
-    val.append(tup)
+myresult = mycursor.fetchall()
 
-mycursor.executemany(sql, val)
-
-mydb.commit()
+for i in myresult:
+	print(i)
