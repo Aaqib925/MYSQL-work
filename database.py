@@ -27,7 +27,7 @@ mycursor = mydb.cursor()
 
 mycursor.execute("CREATE TABLE mydata (name VARCHAR(255), age VARCHAR(255))")
 
-this will create a table in mydatabase
+# this will create a table in mydatabase
 
 now for the insert querry
 
@@ -69,7 +69,7 @@ mycursor.executemany(sql, val)
 
 mydb.commit()
 
-select querry
+# select querry
 
 import mysql.connector
 
