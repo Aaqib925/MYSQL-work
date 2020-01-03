@@ -90,7 +90,24 @@
 # for i in myresult:
 # 	print(i)
 
-# for fetching only one row from the database...we use querry of fetone()
+# for fetching only one row from the database...we use querry of fetchone()
+
+# import mysql.connector
+
+# mydb = mysql.connector.connect(host="localhost", user="root", passwd="password", database="mydatabase")
+
+# mycursor = mydb.cursor()
+
+# sql = "SELECT * from mydata"
+
+# mycursor.execute(sql)
+
+# myresult = mycursor.fetchone()
+
+# for i in myresult:
+# 	print(i)
+
+# to delete the data from the table we use the query delete from
 
 import mysql.connector
 
@@ -98,11 +115,8 @@ mydb = mysql.connector.connect(host="localhost", user="root", passwd="password",
 
 mycursor = mydb.cursor()
 
-sql = "SELECT * from mydata"
+sql = "DELETE FROM mydata where age = '18'"
 
 mycursor.execute(sql)
 
-myresult = mycursor.fetchone()
-
-for i in myresult:
-	print(i)
+mydb.commit()
