@@ -115,8 +115,17 @@ mydb = mysql.connector.connect(host="localhost", user="root", passwd="password",
 
 mycursor = mydb.cursor()
 
-sql = "DELETE FROM mydata where age = '18'"
+# sql = "DELETE FROM mydata where age = '18'"
+
+# mycursor.execute(sql)
+
+# mydb.commit()
+
+sql = "SELECT * from mydata where age = '10'"
 
 mycursor.execute(sql)
 
-mydb.commit()
+myresult = mycursor.fetchone()
+
+for i in myresult:
+	print(i)
