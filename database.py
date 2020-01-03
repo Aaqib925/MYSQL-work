@@ -45,13 +45,13 @@
 
 # mydb.commit()   # this shit very important
 
-# import mysql.connector
-#
-# mydb = mysql.connector.connect(host="localhost", user="root", passwd="password", database="mydatabase")
-#
-# mycursor = mydb.cursor()
-#
-# sql = "INSERT INTO mydata (name, age) VALUES (%s, %s)"
+import mysql.connector
+
+mydb = mysql.connector.connect(host="localhost", user="root", passwd="password", database="mydatabase")
+
+mycursor = mydb.cursor()
+
+sql = "INSERT INTO mydata (name, age) VALUES (%s, %s)"
 
 val = []
 
@@ -65,4 +65,6 @@ for i in range(3):
     tup = tuple(tup_list)
     val.append(tup)
 
-print(val)
+mycursor.executemany(sql, val)
+
+mydb.commit()
