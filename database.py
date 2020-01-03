@@ -19,10 +19,13 @@
 
 # table query
 
-import mysql.connector
+# import mysql.connector
 
-mydb = mysql.connector.connect(host="localhost", user="root", passwd="password", database="mydatabase")
+# mydb = mysql.connector.connect(host="localhost", user="root", passwd="password", database="mydatabase")
 
-mycursor = mydb.cursor()
+# mycursor = mydb.cursor()
 
-mycursor.execute("CREATE TABLE mydata (name VARCHAR(255), age VARCHAR(255))")
+# mycursor.execute("CREATE TABLE mydata (name VARCHAR(255), age VARCHAR(255))")
+
+# this will create a table in mydatabase
+
