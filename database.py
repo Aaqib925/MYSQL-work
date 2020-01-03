@@ -109,11 +109,11 @@
 
 # to delete the data from the table we use the query delete from
 
-import mysql.connector
+# import mysql.connector
 
-mydb = mysql.connector.connect(host="localhost", user="root", passwd="password", database="mydatabase")
+# mydb = mysql.connector.connect(host="localhost", user="root", passwd="password", database="mydatabase")
 
-mycursor = mydb.cursor()
+# mycursor = mydb.cursor()
 
 # sql = "DELETE FROM mydata where age = '18'"
 
@@ -121,11 +121,25 @@ mycursor = mydb.cursor()
 
 # mydb.commit()
 
-sql = "SELECT * from mydata where age = '10'"
+# sql = "SELECT * from mydata where age = '10'"
+
+# mycursor.execute(sql)
+
+# myresult = mycursor.fetchone()
+
+# for i in myresult:
+# 	print(i)
+
+# to update the data from the database we use the query of update
+
+import mysql.connector
+
+mydb = mysql.connector.connect(host="localhost", user="root", passwd="password", database="mydatabase")
+
+mycursor = mydb.cursor()
+
+sql = "UPDATE mydata SET name = 'BWWLA' WHERE name = 'user1'"
 
 mycursor.execute(sql)
 
-myresult = mycursor.fetchone()
-
-for i in myresult:
-	print(i)
+mydb.commit()
