@@ -1,26 +1,16 @@
-# dor this i will first import the mysql connector my which i will connect my database by using python
+# import mysql.connector
 
-import mysql.connector
+# mydb = mysql.connector.connect(host="localhost", user="root", passwd="password")
 
-# defining a variable which will carry the username and password 
+# mycursor = mydb.cursor()
+# mycursor.execute("CREATE DATABASE mydatabase")
 
-mydb = mysql.connector.connect(
-    host="localhost",
-    user="aaqib",
-    passwd="Aaaqib"
-)
+# now the database is created
 
-# this will show me the address where the user is located in memory
+# now for checking
 
-print(mydb)
+# import mysql.connector
 
-# in mysql...we need a cursor for our work to be done and queries for the commands
+# mydb = mysql.connector.connect(host="localhost", user="root", passwd="password", database="mydatabase")
 
-mycursor = mydb.cursor()
-
-# to create a database we execute a querry of CREATE DATABASE inside a cursor exceute function
-
-mycursor.exceute("CREATE DATABASE Firstdatabase")
-
-
-
+# since there is no error it means that database is created...
