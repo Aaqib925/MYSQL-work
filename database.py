@@ -71,6 +71,27 @@
 
 # select querry
 
+# import mysql.connector
+
+# mydb = mysql.connector.connect(host="localhost", user="root", passwd="password", database="mydatabase")
+
+# mycursor = mydb.cursor()
+
+# sql = "SELECT * from mydata"
+
+# # sql = "SELECT name from mydata"
+
+# # sql = "SELECT age from mydata"
+
+# mycursor.execute(sql)
+
+# myresult = mycursor.fetchall()
+
+# for i in myresult:
+# 	print(i)
+
+# for fetching only one row from the database...we use querry of fetone()
+
 import mysql.connector
 
 mydb = mysql.connector.connect(host="localhost", user="root", passwd="password", database="mydatabase")
@@ -81,7 +102,7 @@ sql = "SELECT * from mydata"
 
 mycursor.execute(sql)
 
-myresult = mycursor.fetchall()
+myresult = mycursor.fetchone()
 
 for i in myresult:
 	print(i)
