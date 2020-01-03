@@ -29,3 +29,40 @@
 
 # this will create a table in mydatabase
 
+# now for the insert querry
+
+# import mysql.connector
+
+# mydb = mysql.connector.connect(host="localhost", user="root", passwd="password", database="mydatabase")
+
+# mycursor = mydb.cursor()
+
+# sql = "INSERT INTO mydata (name, age) VALUES (%s, %s)"
+
+# val = ("Aaqib", "18")
+
+# mycursor.execute(sql, val)
+
+# mydb.commit()   # this shit very important
+
+# import mysql.connector
+#
+# mydb = mysql.connector.connect(host="localhost", user="root", passwd="password", database="mydatabase")
+#
+# mycursor = mydb.cursor()
+#
+# sql = "INSERT INTO mydata (name, age) VALUES (%s, %s)"
+
+val = []
+
+for i in range(3):
+    tup = ()
+    tup_list = list(tup)
+    x = input("Enter the name: ")
+    y = input("Enter the age: ")
+    tup_list.append(x)
+    tup_list.append(y)
+    tup = tuple(tup_list)
+    val.append(tup)
+
+print(val)
