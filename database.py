@@ -162,3 +162,10 @@
 #
 # for i in myresult:
 # 	print(i)
+
+import mysql.connector
+
+mydb = mysql.connector.connect(host="localhost", user="root", passwd="password", database="labtask")
+
+mycursor = mydb.cursor()
+# mycursor.execute("CREATE DATABASE labtask")
