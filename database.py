@@ -177,17 +177,3 @@ try:
     mycursor.execute("CREATE TABLE numbers (Prime int)")
 except mysql.connector.errors.ProgrammingError:
     print("This table already exists.")
-prime = 1
-num = int(input("Enter any number: "))
-for i in range(2, num):
-    if num % i == 0:
-        prime = 0
-if prime == 1:
-    print("The number is Prime")
-else:
-    print("The number is not Prime")
-
-# sql = "SELECT * FROM numbers where Prime = (%s)"
-# mycursor.execute(sql, (num,))
-# myresult = mycursor.fetchone()
-
