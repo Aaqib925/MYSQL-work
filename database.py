@@ -179,3 +179,9 @@ except mysql.connector.errors.ProgrammingError:
     print("This table already exists.")
 
 num = int(input("Enter any number: "))
+
+sql = "SELECT * FROM numbers where Prime = (%s)"
+mycursor.execute(sql, (num,))
+myresult = mycursor.fetchone()
+
+if myresult is None:
