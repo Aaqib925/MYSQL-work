@@ -184,14 +184,15 @@ mycursor.execute(sql, (num,))
 result = mycursor.fetchone()
 if result is not None:
     for i in result:
-        print("The Number fetched from Database and the number {} is Prime".format(num))
+        print("The Number fetched from Database and the number {} is Prime Number.".format(num))
 else:
     for j in range(2, num):
         if num % j == 0:
             print("The number {} is not Prime Number.".format(num))
-        else:
-            print("The number {} is Prime Number".format(num))
-            sql = "INSERT INTO numbers(Prime) VALUES (%s)"
-            mycursor.execute(sql, (num,))
-            print("Number {} added to Database.".format(num))
-            mydb.commit()
+            break
+    else:
+        print("The number {} is Prime Number".format(num))
+        sql = "INSERT INTO numbers(Prime) VALUES (%s)"
+        mycursor.execute(sql, (num,))
+        print("Number {} added to Database.".format(num))
+        mydb.commit()
