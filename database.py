@@ -168,4 +168,8 @@ import mysql.connector
 mydb = mysql.connector.connect(host="localhost", user="root", passwd="password", database="labtask")
 
 mycursor = mydb.cursor()
-# mycursor.execute("CREATE DATABASE labtask")
+try:
+    mycursor.execute("CREATE DATABASE labtask")
+except mysql.connector.errors.DatabaseError:
+    print("DataBase Already exists.")
+
