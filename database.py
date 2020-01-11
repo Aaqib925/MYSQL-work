@@ -174,13 +174,8 @@ try:
 except mysql.connector.errors.DatabaseError:
     print("This Database already exist.")
 try:
-    mycursor.execute("CREATE TABLE numbers (Even int, Odd int)")
+    mycursor.execute("CREATE TABLE numbers (Prime int)")
 except mysql.connector.errors.ProgrammingError:
     print("This table already exists.")
 
-# ls = []
-# num = int(input("Enter any number: "))
-# ls.append(num)
-# print(tuple(ls))
-# mycursor.execute("INSERT INTO numbers(Even) VALUES (%s)", tuple(ls))
-# mydb.commit()
+num = int(input("Enter any number: "))
