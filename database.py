@@ -178,9 +178,9 @@ try:
 except mysql.connector.errors.ProgrammingError:
     print("This table already exists.")
 
-
+# ls = []
 # num = int(input("Enter any number: "))
-# if num % 2 == 0:
-#     print("The number is Even.")
-# else:
-#     print("The number is Odd.")
+# ls.append(num)
+# print(tuple(ls))
+# mycursor.execute("INSERT INTO numbers(Even) VALUES (%s)", tuple(ls))
+# mydb.commit()
