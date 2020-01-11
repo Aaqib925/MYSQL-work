@@ -173,5 +173,14 @@ try:
     mycursor.execute("CREATE DATABASE labtask")
 except mysql.connector.errors.DatabaseError:
     print("This Database already exist.")
+try:
+    mycursor.execute("CREATE TABLE numbers (Even int, Odd int)")
+except mysql.connector.errors.ProgrammingError:
+    print("This table already exists.")
 
 
+# num = int(input("Enter any number: "))
+# if num % 2 == 0:
+#     print("The number is Even.")
+# else:
+#     print("The number is Odd.")
